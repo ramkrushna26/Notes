@@ -1,0 +1,52 @@
+Ø Teradata : Decisions support system (OLAP)
+Ø Teradata provide both software and hardware
+Ø BYNET -> masasge passing layer
+	○ to interact between PE and AMP
+	○ Hardware component
+	○ BYNET 0 and BYNET 1 : for fault tolerance
+Ø PE = Parsing Engine
+	○ Checks auth, syntax, semnatic
+	○ Prepare execution plan
+Ø AMP (Access module processor)
+	○ Process quarries
+	○ Get execution from BYNET
+Ø VDISKS
+	○ Stored data physically
+Ø Storing data
+		Primary Index value (x)
+			|
+		hashing Algo. (x) (32bit  + 32bit)
+			|
+		Generating hash value (y) (64bit)
+			|
+		hash Map (y)
+			|
+		AMP number
+Ø Retreiving data
+	○ Retreiving with where clause follow same procedure as storing data
+Ø Hashrow
+Ø Hashbucket
+Ø Hashamp
+
+Ø Spool space -> for storing intermidiate data (select, aggregate, filter)
+Ø Permanent table
+	○ SET
+		§ Duplicate not allowed
+	○ MULTISET
+		§ Duplicate allowed
+Ø CASE
+	○ SELECT emp_no
+	○ CASE dept_no
+	○ WHEN 1 THEN 'Admin'
+	○ WHEN 2 THEN 'IT'
+	○ END AS Dept
+	○ FROM employee
+Ø COALESCE
+	○ Returns first non-null value of expression
+	○ Select emp_no, coalesce(dept_no, "dept is null")
+	○ From employee
+Ø NULLIF
+	○ Returns NULL if arguments are equal
+	○ Select emp_no, NULLIF(dept_no, 3) as dept_no
+	○ From employee
+Return NULL if dept_no is 3 otherwise returns dept_no

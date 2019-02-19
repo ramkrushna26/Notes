@@ -1,0 +1,19 @@
+	# GIT Tutorial
+    
+  Ø Git init 
+	Ø Git clone <github repo>   : to clone repository from Github
+	Ø Git add <fliename> : for adding file to git and to push it to staging area
+	Ø Git commit -m " " : for comitting changes to file
+
+For creating branch
+	Ø Git branch <name> >: creating a branch
+	Ø Git checkout <name> : for working on that branch
+	Ø Git merge <name> : to merging branch with master
+
+Working with remote repo
+	Ø Git remote : to know remote repos
+	Ø Git remote add origin <github repo> : for adding remote repo
+	Ø Get push -u origin master : adding master to remote repo origin
+
+Pulling changes by other developers
+	Ø Git pull
